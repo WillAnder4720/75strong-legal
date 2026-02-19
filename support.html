@@ -3,221 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - 75 Strong</title>
+    <title>Support – 75 Strong</title>
     <style>
         :root {
-            --primary-color: #26C6DA;
-            --dark-bg: #0A1828;
-            --medium-bg: #1E3A5F;
-            --text-color: #E0E0E0;
-            --heading-color: #FFFFFF;
+            --bg:      #0A1120;
+            --surface: #111827;
+            --border:  rgba(255,255,255,0.08);
+            --blue:    #3B82F6;
+            --text:    #E5E7EB;
+            --muted:   #9CA3AF;
+            --heading: #FFFFFF;
+            --green:   #10B981;
+            --gold:    #F59E0B;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--medium-bg) 100%);
-            color: var(--text-color);
-            line-height: 1.7;
-            padding: 20px;
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            padding: 24px 16px 60px;
         }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .container { max-width: 760px; margin: 0 auto; }
+        header {
+            text-align: center;
+            padding: 48px 0 40px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
         }
-
-        h1 {
-            color: var(--heading-color);
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 900;
-            letter-spacing: 2px;
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px; height: 56px;
+            background: var(--blue);
+            border-radius: 14px;
+            margin-bottom: 16px;
         }
-
-        h2 {
-            color: var(--primary-color);
-            font-size: 1.8em;
-            margin-top: 40px;
+        .logo svg { width: 28px; height: 28px; fill: white; }
+        h1 { font-size: 2rem; font-weight: 800; color: var(--heading); letter-spacing: -0.5px; }
+        .meta { margin-top: 8px; font-size: 0.875rem; color: var(--muted); }
+        section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px 32px;
             margin-bottom: 20px;
-            font-weight: 700;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
         }
-
-        p {
-            margin-bottom: 15px;
-            font-size: 1em;
-        }
-
-        ul {
-            margin-left: 30px;
-            margin-bottom: 15px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        .contact-box {
-            background: rgba(38, 198, 218, 0.1);
-            border: 1px solid var(--primary-color);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 30px 0;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
+        h2 { font-size: 1.125rem; font-weight: 700; color: var(--blue); margin-bottom: 16px; }
+        p { margin-bottom: 14px; font-size: 0.9375rem; }
+        p:last-child { margin-bottom: 0; }
+        ul { margin: 10px 0 14px 20px; font-size: 0.9375rem; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--heading); }
+        a { color: var(--blue); text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
         .faq-item {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-left: 3px solid var(--primary-color);
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
         }
-
-        .faq-question {
-            color: var(--heading-color);
+        .faq-item:first-child { padding-top: 0; }
+        .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .faq-q {
+            font-size: 0.9375rem;
             font-weight: 600;
+            color: var(--heading);
             margin-bottom: 8px;
         }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
+        .faq-a {
+            font-size: 0.9rem;
+            color: var(--text);
+            margin: 0;
         }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background: rgba(59,130,246,0.08);
+            border: 1px solid rgba(59,130,246,0.2);
+            border-radius: 14px;
+            padding: 24px 28px;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+        .contact-card:hover { background: rgba(59,130,246,0.14); text-decoration: none; }
+        .contact-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; height: 44px;
+            background: var(--blue);
+            border-radius: 11px;
+            flex-shrink: 0;
+        }
+        .contact-icon svg { width: 22px; height: 22px; fill: white; }
+        .contact-label { font-size: 0.8125rem; color: var(--muted); margin-bottom: 2px; }
+        .contact-value { font-size: 1rem; font-weight: 600; color: var(--blue); }
+
+        footer { text-align: center; font-size: 0.8125rem; color: var(--muted); margin-top: 40px; }
+        footer a { color: var(--muted); }
+        footer a:hover { color: var(--blue); }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>75 Strong Support</h1>
+<div class="container">
 
-        <div class="section">
-            <p>Welcome to 75 Strong support! We're here to help you complete your 75 Hard challenge.</p>
+    <header>
+        <div class="logo">
+            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h1>Support</h1>
+        <p class="meta">75 Strong &nbsp;&middot;&nbsp; We typically respond within 24 hours</p>
+    </header>
+
+    <!-- Contact -->
+    <a class="contact-card" href="mailto:support@75strong.app">
+        <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div>
+            <div class="contact-label">Email Support</div>
+            <div class="contact-value">support@75strong.app</div>
+        </div>
+    </a>
+
+    <!-- FAQ -->
+    <section>
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <p class="faq-q">How do I reset my challenge?</p>
+            <p class="faq-a">Tap the circular arrow icon in the top-left corner of the Today tab. You'll be taken through the setup flow to choose your current day and start fresh.</p>
         </div>
 
-        <div class="contact-box">
-            <h2 style="margin-top: 0; border: none; padding: 0;">Contact Us</h2>
-            <p>For support, questions, or feedback, please email us:</p>
-            <p><strong>Email:</strong> <a href="mailto:75strongaienhanced@gmail.com">75strongaienhanced@gmail.com</a></p>
-            <p><strong>Response Time:</strong> We typically respond within 24-48 hours</p>
+        <div class="faq-item">
+            <p class="faq-q">My progress photos aren't showing up.</p>
+            <p class="faq-a">Make sure 75 Strong has permission to access your camera and photo library. Go to iPhone Settings → Privacy &amp; Security → Photos → 75 Strong and set it to "All Photos" or "Selected Photos."</p>
         </div>
 
-        <div class="section">
-            <h2>Frequently Asked Questions</h2>
-
-            <div class="faq-item">
-                <div class="faq-question">How do I reset my challenge?</div>
-                <p>Go to Settings → Profile → scroll down and tap "Reset Challenge". You can choose which day to restart from.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How do I enable notifications?</div>
-                <p>Go to Settings → Notifications. Enable notifications and customize which tasks you want reminders for. You can also schedule specific times for each task.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How do I sync my data across devices?</div>
-                <p>Make sure you're logged in with the same account on all devices. Your data automatically syncs when you're connected to the internet.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How do I connect Apple Health?</div>
-                <p>When you first open the app, you'll be prompted to connect Apple Health. You can also enable it later in iOS Settings → Health → Data Access & Devices → 75 Strong.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">What features are included in Premium?</div>
-                <p>Premium includes:</p>
-                <ul>
-                    <li>AI-Powered Photo Analysis</li>
-                    <li>Personal AI Coach</li>
-                    <li>Advanced Analytics with Health Insights</li>
-                    <li>Detailed Charts and Trend Analysis</li>
-                </ul>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How do I cancel my subscription?</div>
-                <p>Open iOS Settings → Your Name → Subscriptions → 75 Strong → Cancel Subscription. Your subscription remains active until the end of the current billing period.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How do I delete my account?</div>
-                <p>Go to Settings → Profile → Log Out → Delete Account. This will permanently delete all your data.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">The app crashed or has a bug</div>
-                <p>Please email us at <a href="mailto:75strongaienhanced@gmail.com">75strongaienhanced@gmail.com</a> with:</p>
-                <ul>
-                    <li>Description of the issue</li>
-                    <li>What you were doing when it happened</li>
-                    <li>Your device model and iOS version</li>
-                    <li>Screenshots if possible</li>
-                </ul>
-            </div>
+        <div class="faq-item">
+            <p class="faq-q">The AI Coach isn't responding.</p>
+            <p class="faq-a">Check your internet connection. Free users are limited to 10 messages per day — if you've hit the limit it resets at midnight. Upgrade to 75 Strong Pro for unlimited messages.</p>
         </div>
 
-        <div class="section">
-            <h2>Additional Resources</h2>
-            <ul>
-                <li><a href="https://WillAnder4720.github.io/75strong-legal/privacy-policy.html" target="_blank">Privacy Policy</a></li>
-                <li><a href="https://WillAnder4720.github.io/75strong-legal/terms-of-service.html" target="_blank">Terms of Service</a></li>
-            </ul>
+        <div class="faq-item">
+            <p class="faq-q">Journey Analysis or Physique Scan is locked.</p>
+            <p class="faq-a">Free users get one lifetime trial of each feature. After using your trial, upgrade to 75 Strong Pro for unlimited access.</p>
         </div>
 
-        <div class="section">
-            <h2>About 75 Hard</h2>
-            <p>The 75 Hard challenge is a 75-day mental toughness program that requires completing these tasks every day:</p>
-            <ul>
-                <li>Two 45-minute workouts (one must be outdoors)</li>
-                <li>Follow a diet (no cheat meals or alcohol)</li>
-                <li>Drink 1 gallon of water</li>
-                <li>Read 10 pages of non-fiction</li>
-                <li>Take a progress photo</li>
-            </ul>
-            <p>Missing any task means starting over at Day 1. 75 Strong helps you track and complete this challenge.</p>
+        <div class="faq-item">
+            <p class="faq-q">Apple Health data isn't appearing in Analytics.</p>
+            <p class="faq-a">Go to iPhone Settings → Privacy &amp; Security → Health → 75 Strong and ensure Steps, Heart Rate, and Active Energy are turned on. Then re-open the Analytics tab.</p>
         </div>
 
-        <div class="section" style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p style="text-align: center; color: var(--primary-color);">
-                <strong>75 Strong</strong> - Transform Your Life in 75 Days
-            </p>
+        <div class="faq-item">
+            <p class="faq-q">How do I cancel my Pro subscription?</p>
+            <p class="faq-a">Open iPhone Settings → tap your name → Subscriptions → 75 Strong → Cancel Subscription. You'll keep Pro access until the end of the current billing period.</p>
         </div>
-    </div>
+
+        <div class="faq-item">
+            <p class="faq-q">I bought Pro but it's showing as free.</p>
+            <p class="faq-a">Open the app, go to Settings, and tap "Manage" next to 75 Strong Pro. If the issue persists, tap "Restore Purchases" on the Pro upgrade screen.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-q">I accidentally deleted the app and lost my data.</p>
+            <p class="faq-a">75 Strong stores data locally on your device. Deleting the app permanently removes your challenge history. We recommend using iCloud Backup to protect your device data. Unfortunately we cannot recover deleted app data.</p>
+        </div>
+    </section>
+
+    <!-- Subscriptions -->
+    <section>
+        <h2>Subscription &amp; Billing</h2>
+        <p>75 Strong Pro is an optional auto-renewable subscription available in two plans:</p>
+        <ul>
+            <li><strong>Monthly</strong> — $1.99/month</li>
+            <li><strong>Yearly</strong> — $14.99/year (save 37%)</li>
+        </ul>
+        <p>Payment is charged to your Apple ID. To manage or cancel, go to <strong>iPhone Settings → [your name] → Subscriptions</strong>.</p>
+        <p>For billing disputes or refund requests, please contact <a href="https://reportaproblem.apple.com" target="_blank">Apple directly</a> as all payments are processed by Apple.</p>
+    </section>
+
+    <footer>
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            &nbsp;&middot;&nbsp;
+            &copy; 2026 75 Strong. All rights reserved.
+        </p>
+    </footer>
+
+</div>
 </body>
 </html>
